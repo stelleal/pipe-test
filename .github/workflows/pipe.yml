@@ -16,11 +16,11 @@ jobs:
     - name: Set environment variables
       run: |
         if [ "${{ github.ref }}" = "refs/heads/dev" ]; then
-          echo "STRING=ESTOU-NA-DEV" >> $GITHUB_ENV
-          echo "TEST_ENV=staging" >> $GITHUB_ENV
+          echo "STRING=ESTOU-NA-DEV" >> $GITHUB_OUTPUT
+          echo "TEST_ENV=staging" >> $GITHUB_OUTPUT
         elif [ "${{ github.ref }}" = "refs/heads/main" ]; then
-          echo "STRING=ESTOU-NA-MAIN" >> $GITHUB_ENV
-          echo "TEST_ENV=production" >> $GITHUB_ENV
+          echo "STRING=ESTOU-NA-MAIN" >> $GITHUB_OUTPUT
+          echo "TEST_ENV=production" >> $GITHUB_OUTPUT
         fi
         
     - name: Echo My Stuff
